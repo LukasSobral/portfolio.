@@ -1,51 +1,68 @@
 import React from 'react';
-import { Container, Row, Col, Card } from 'react-bootstrap';
+import { Container, Row, Col, Button } from 'react-bootstrap';
+import lucasSemFundo from '../assets/perfil_semfundo.png';
+import { FaDownload, FaProjectDiagram } from 'react-icons/fa';
 
 function About() {
   return (
-    <section id="about" style={{ backgroundColor: '#151515', color: '#ededed', padding: '80px 0' }}>
+    <section id="about" className="about-section py-5">
       <Container>
-        <Row className="mb-5 text-center">
+        <Row className="mb-4 text-center">
           <Col>
             <h2 className="fw-bold" style={{ color: '#8A2BE2' }}>About Me</h2>
-            <p className="text-muted">Let me introduce myself</p>
+            <p>Let me introduce myself</p>
           </Col>
         </Row>
         <Row className="align-items-center">
-          <Col md={6}>
+          <Col md={6} className="text-center mb-4 mb-md-0" data-aos="fade-right">
             <img
-              src="./src/assets/fotoperfil.jpg"
-              alt="Lucas About"
-              className="img-fluid rounded"
+              src={lucasSemFundo}
+              alt="Lucas Sobral"
+              className="img-fluid rounded-circle shadow about-img"
               style={{
-                height: '400px',
-                width: 'auto',
-                objectFit: 'cover',
-                borderRadius: '20px',
-                boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)',
-                marginBottom: '40px',
+                width: '250px',
+                border: '3px solid #8A2BE2',
+                boxShadow: '0 0 25px rgba(138, 43, 226, 0.3)',
               }}
             />
           </Col>
-          <Col md={6}>
-            <Card bg="dark" text="light" className="border-0" style={{ backgroundColor: '#1e1e2e' }}>
-              <Card.Body>
-                <Card.Text style={{ fontSize: '1.1rem' }}>
-                I’m a Software Engineer with 3+ years of experience designing and delivering backend and AI-powered solutions that optimize operations and drive real business impact. My technical strengths lie in Python, FastAPI, Django, and computer vision tools such as YOLOv8.
+          <Col md={6} data-aos="fade-left">
+            <div className="text-light" style={{ fontSize: '1.05rem', lineHeight: '1.7' }}>
+              <p>
+                I'm Lucas Sobral, a Software Engineer from Brazil with over 3 years of experience
+                in backend development and AI-powered solutions. I build systems that make complex
+                processes simpler, faster, and smarter.
+              </p>
+              <p>
+                I’ve led projects involving computer vision (YOLOv8), geospatial APIs, and internal
+                AI assistants. Whether it’s automating forestry analysis or optimizing vehicle
+                logistics, I bring data, intelligence, and clean code together.
+              </p>
+              <p>
+                My stack includes Python, FastAPI, Django, PostgreSQL, and machine learning. I'm
+                currently seeking international opportunities to contribute to global, high-impact
+                products.
+              </p>
 
-                  <br /><br />
-                  I’ve led the development of intelligent systems including:
-                  
-                    - A computer vision platform that detects forestry residues via satellite imagery, automating environmental monitoring and saving hundreds of manual work hours;
-                    - A geospatial API that calculates real-time distances between vehicles and rural assets using GPS and shapefile data, enabling optimized routing and logistics;
-                    - An AI assistant that integrates language models to support internal operations and accelerate team workflows.
-
-                    I specialize in transforming complex business processes into scalable, automated, and high-performance software solutions — combining data pipelines, RESTful APIs, and real-time analytics. I also bring experience in data engineering, dashboard creation (Power BI), and secure authentication systems.
-
-                    Passionate about impactful engineering, I aim to join global teams building next-gen platforms where I can contribute through clean code, problem-solving, and continuous innovation.
-                </Card.Text>
-              </Card.Body>
-            </Card>
+              {/* 🔹 Botões interativos */}
+              <div className="mt-4 d-flex gap-3 flex-wrap">
+                <Button
+                  variant="primary"
+                  href="/Lucas_Sobral_Resume.pdf"
+                  target="_blank"
+                  className="btn-roxo d-flex align-items-center gap-2"
+                >
+                  <FaDownload /> Download CV
+                </Button>
+                <Button
+                  variant="outline-light"
+                  href="#projects"
+                  className="d-flex align-items-center gap-2"
+                >
+                  <FaProjectDiagram /> View Projects
+                </Button>
+            </div>
+            </div>
           </Col>
         </Row>
       </Container>

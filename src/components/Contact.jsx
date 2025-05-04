@@ -8,33 +8,41 @@ function Contact() {
         <Row className="text-center mb-5">
           <Col>
             <h2 className="fw-bold" style={{ color: '#8A2BE2' }}>Get In Touch</h2>
-            <p className="text-muted">Feel free to reach out — I'm open to opportunities and collaborations</p>
+            <p>Feel free to reach out — I'm open to opportunities and collaborations</p>
           </Col>
         </Row>
         <Row className="justify-content-center">
-          <Col md={8}>
-            <Form>
-              <Form.Group controlId="formName" className="mb-3">
-                <Form.Label>Name</Form.Label>
-                <Form.Control type="text" placeholder="Your name" />
-              </Form.Group>
+          <Col md={8} data-aos="fade-up">
+            {/* Form HTML puro com classes do Bootstrap */}
+            <form
+              action="https://formsubmit.co/lucassobral301@gmail.com"
+              method="POST"
+              className="contact-form"
+            >
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="_next" value="https://lukassobral.github.io/portfolio/#thanks" />
 
-              <Form.Group controlId="formEmail" className="mb-3">
-                <Form.Label>Email</Form.Label>
-                <Form.Control type="email" placeholder="Your email" />
-              </Form.Group>
+              <div className="mb-3">
+                <label htmlFor="name" className="form-label">Name</label>
+                <input type="text" name="name" id="name" className="form-control bg-dark text-light" placeholder="Your name" required />
+              </div>
 
-              <Form.Group controlId="formMessage" className="mb-4">
-                <Form.Label>Message</Form.Label>
-                <Form.Control as="textarea" rows={5} placeholder="Write your message..." />
-              </Form.Group>
+              <div className="mb-3">
+                <label htmlFor="email" className="form-label">Email</label>
+                <input type="email" name="email" id="email" className="form-control bg-dark text-light" placeholder="Your email" required />
+              </div>
+
+              <div className="mb-4">
+                <label htmlFor="message" className="form-label">Message</label>
+                <textarea name="message" id="message" rows="5" className="form-control bg-dark text-light" placeholder="Write your message..." required></textarea>
+              </div>
 
               <div className="text-center">
-                <Button variant="primary" type="submit">
+                <Button variant="outline-light" type="submit">
                   Send Message
                 </Button>
               </div>
-            </Form>
+            </form>
           </Col>
         </Row>
       </Container>

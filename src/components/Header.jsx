@@ -30,7 +30,10 @@ function Header() {
             <Nav.Link href="#about" className="text-light">About</Nav.Link>
             <Nav.Link href="#projects" className="text-light">Projects</Nav.Link>
             <Nav.Link href="#contact" className="text-light">Contact</Nav.Link>
-            <Button variant="outline-light" className="ms-3" href="#contact">Hire Me</Button>
+
+            <Button href="#contact" className="btn-hire ms-3">Hire Me</Button>
+
+
           </Nav>
         </Navbar.Collapse>
       </Container>

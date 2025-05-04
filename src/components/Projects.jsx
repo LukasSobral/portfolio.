@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container, Row, Col, Card, Button } from 'react-bootstrap';
+import { FaGithub } from 'react-icons/fa';
 
 function Projects() {
   const projects = [
@@ -30,28 +31,35 @@ function Projects() {
   ];
 
   return (
-    <section id="projects" style={{ backgroundColor: '#151515', color: '#ededed', padding: '80px 0' }}>
+    <section id="projects" className="projects-section py-5">
       <Container>
         <Row className="text-center mb-5">
           <Col>
             <h2 className="fw-bold" style={{ color: '#8A2BE2' }}>Projects</h2>
-            <p className="text-muted">Some of the work I've done recently</p>
+            <p>Some of the work I've done recently</p>
           </Col>
         </Row>
         <Row>
           {projects.map((project, index) => (
-            <Col md={6} lg={6} className="mb-4" key={index}>
-              <Card style={{ backgroundColor: '#1e1e2e' }} className="h-100 border-0 shadow">
-                <Card.Img variant="top" src={project.image} alt={project.title} />
+            <Col md={6} className="mb-4" key={index} data-aos="fade-up" data-aos-delay={index * 100}>
+              <Card className="project-card border-0 h-100 shadow-sm">
+                <Card.Img
+                  variant="top"
+                  src={project.image}
+                  alt={project.title}
+                  style={{ borderTopLeftRadius: '12px', borderTopRightRadius: '12px' }}
+                />
                 <Card.Body>
                   <Card.Title className="fw-semibold">{project.title}</Card.Title>
-                  <Card.Text className="text-muted">{project.desc}</Card.Text>
+                  <Card.Text>{project.desc}</Card.Text>
                   <Button
                     variant="outline-light"
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
+                    className="mt-2"
                   >
+                    <FaGithub className="me-2" />
                     View on GitHub
                   </Button>
                 </Card.Body>
